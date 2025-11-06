@@ -117,8 +117,7 @@ This project is open source and available for personal use. Please credit the or
 - Email: ishanaggarwal7775@gmail.com
 - LinkedIn: [linkedin.com/in/ishanaggarwal1](https://www.linkedin.com/in/ishanaggarwal1/)
 - GitHub: [github.com/ishanaggarwal](https://github.com/ishanaggarwal)
-- Phone: +1 (857) 991-6379
-- Location: Boston, MA, USA
+- Location: Boston, MA / Seattle, WA
 
 ---
 
