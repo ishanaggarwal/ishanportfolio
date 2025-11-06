@@ -26,7 +26,7 @@ import {
 import Image from "next/image"
 
 // Floating Animation Component
-const FloatingElement = ({ children, delay = 0, duration = 6, amplitude = 20 }) => {
+const FloatingElement = ({ children, delay = 0, duration = 6, amplitude = 20 }: { children: React.ReactNode, delay?: number, duration?: number, amplitude?: number }) => {
   return (
     <motion.div
       animate={{
@@ -78,8 +78,8 @@ export default function ApplePortfolio() {
   const { scrollYProgress } = useScroll()
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [selectedExperience, setSelectedExperience] = useState(null)
+  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [selectedExperience, setSelectedExperience] = useState<any>(null)
 
   // Contact form state
   const [formData, setFormData] = useState({
@@ -88,9 +88,9 @@ export default function ApplePortfolio() {
     email: "",
     message: "",
   })
-  const [formErrors, setFormErrors] = useState({})
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null) // 'success' | 'error' | null
 
   useEffect(() => {
     const handleScroll = () => {
@@ -132,7 +132,7 @@ export default function ApplePortfolio() {
 
   // Form validation
   const validateForm = () => {
-    const errors = {}
+    const errors: Record<string, string> = {}
 
     // First name validation
     if (!formData.firstName.trim()) {
@@ -164,7 +164,7 @@ export default function ApplePortfolio() {
   }
 
   // Handle form input changes
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -181,7 +181,7 @@ export default function ApplePortfolio() {
   }
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     if (!validateForm()) {
@@ -415,8 +415,8 @@ Sent from your portfolio website
     },
   ]
 
-  const getColorClasses = (colorScheme: string) => {
-    const colors = {
+  const getColorClasses = (colorScheme: string): { ring: string; badge: string; bullet: string; branch: string; node: string } => {
+    const colors: Record<string, { ring: string; badge: string; bullet: string; branch: string; node: string }> = {
       blue: {
         ring: "ring-blue-500 dark:ring-blue-400",
         badge: "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200",
@@ -449,8 +449,8 @@ Sent from your portfolio website
     return colors[colorScheme] || colors.blue
   }
 
-  const getProjectRepo = (title) => {
-    const repoMap = {
+  const getProjectRepo = (title: string) => {
+    const repoMap: Record<string, string> = {
       "LibreChat - Enhanced ChatGPT Clone": "https://github.com/ishanaggarwal/Librechat",
       "Kubernetes Query Copilot": "https://github.com/ishanaggarwal/query-agent-sample",
       "Health Key iOS App": "https://github.com/ishanaggarwal/Healthkey-iOS-Swift-App",
@@ -538,7 +538,7 @@ Sent from your portfolio website
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {["About", "Projects", "Experience", "Contact"].map((item) => (
+              {["About", "Projects", "Experience", "Contact"].map((item: string) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -597,7 +597,7 @@ Sent from your portfolio website
                 className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 transition-colors duration-500"
               >
                 <div className="px-6 py-4 space-y-4">
-                  {["About", "Projects", "Experience", "Contact"].map((item) => (
+                  {["About", "Projects", "Experience", "Contact"].map((item: string) => (
                     <button
                       key={item}
                       onClick={() => scrollToSection(item.toLowerCase())}
@@ -650,7 +650,7 @@ Sent from your portfolio website
               className="mb-12"
             >
               <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium">
-                {["Agentic AI", "LLMs", "SDE", "Cloud", "TPM", "PM", "Data", "DevOps"].map((skill, index) => (
+                {["Agentic AI", "LLMs", "SDE", "Cloud", "TPM", "PM", "Data", "DevOps"].map((skill: string, index: number) => (
                   <motion.span
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -831,7 +831,7 @@ Sent from your portfolio website
             </motion.div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {projects.map((project, index) => (
+              {projects.map((project: any, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -860,7 +860,7 @@ Sent from your portfolio website
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-1.5">
-                        {project.tech.slice(0, 3).map((tech) => (
+                        {project.tech.slice(0, 3).map((tech: string) => (
                           <span
                             key={tech}
                             className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium transition-colors duration-300"
@@ -880,9 +880,10 @@ Sent from your portfolio website
               ))}
             </div>
           </div>
+        </section>
 
-          {/* Project Modal */}
-          <AnimatePresence>
+        {/* Project Modal */}
+        <AnimatePresence>
             {selectedProject && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -928,7 +929,7 @@ Sent from your portfolio website
                           Key Achievements
                         </h4>
                         <div className="space-y-3">
-                          {selectedProject.highlights.map((highlight, i) => (
+                          {selectedProject.highlights.map((highlight: string, i: number) => (
                             <div key={i} className="flex items-start">
                               <div className="w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0" />
                               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{highlight}</p>
@@ -942,7 +943,7 @@ Sent from your portfolio website
                           Technologies Used
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {selectedProject.tech.map((tech) => (
+                          {selectedProject.tech.map((tech: string) => (
                             <span
                               key={tech}
                               className="px-3 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full font-medium transition-colors duration-300"
@@ -969,10 +970,10 @@ Sent from your portfolio website
                 </motion.div>
               </motion.div>
             )}
-          </AnimatePresence>
+        </AnimatePresence>
 
-          {/* Experience Modal */}
-          <AnimatePresence>
+        {/* Experience Modal */}
+        <AnimatePresence>
             {selectedExperience && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -1018,7 +1019,7 @@ Sent from your portfolio website
                           Key Achievements & Responsibilities
                         </h4>
                         <div className="space-y-4">
-                          {selectedExperience.highlights.map((highlight, i) => (
+                          {selectedExperience.highlights.map((highlight: string, i: number) => (
                             <div key={i} className="flex items-start">
                               <div className={`w-2 h-2 ${getColorClasses(selectedExperience.colorScheme).bullet} rounded-full mt-2 mr-3 flex-shrink-0`} />
                               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{highlight}</p>
@@ -1076,7 +1077,7 @@ Sent from your portfolio website
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gray-400 dark:bg-gray-600 rounded-full opacity-30"></div>
 
               <div className="space-y-16 sm:space-y-20">
-                {experiences.map((exp, index) => {
+                {experiences.map((exp: any, index: number) => {
                   const colors = getColorClasses(exp.colorScheme)
                   const isLeft = exp.branchSide === "left"
                   
@@ -1388,5 +1389,5 @@ Sent from your portfolio website
         </footer>
       </div>
     </div>
-  )\
+  )
 }

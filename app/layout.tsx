@@ -5,9 +5,16 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "Ishan Aggarwal - Software Engineer & Product Manager",
+  description: "Portfolio of Ishan Aggarwal - Software Engineer specializing in AI/ML, Cloud Computing, and Full-Stack Development. MS in Computer Science at Northeastern University.",
+  keywords: "Software Engineer, AI, Machine Learning, Cloud Computing, Full Stack Developer, Product Manager",
+  authors: [{ name: "Ishan Aggarwal" }],
+  creator: "Ishan Aggarwal",
+  openGraph: {
+    title: "Ishan Aggarwal - Software Engineer & Product Manager",
+    description: "Portfolio showcasing innovative AI solutions and scalable systems",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
