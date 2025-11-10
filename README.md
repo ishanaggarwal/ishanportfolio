@@ -77,7 +77,7 @@ This project is configured to automatically deploy to GitHub Pages when changes 
 4. Push your changes to the `main` branch
 5. The GitHub Actions workflow will automatically build and deploy your site
 
-Your site will be available at: `https://ishanaggarwal.github.io/ishanportfolio/`
+Your site will be available at: `https://ishanaggarwal.github.io/`
 
 ## 📝 Customization
 

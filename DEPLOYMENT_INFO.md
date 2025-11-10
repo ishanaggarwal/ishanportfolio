@@ -3,7 +3,7 @@
 ## 🌐 Live Website URL
 
 **Your portfolio is live at:**
-### https://ishanaggarwal.github.io/ishanportfolio/
+### https://ishanaggarwal.github.io/
 
 ---
 
@@ -43,8 +43,6 @@
 ```javascript
 {
   output: "export",                    // Static site generation
-  basePath: "/ishanportfolio",        // GitHub Pages subdirectory
-  assetPrefix: "/ishanportfolio/",    // Asset URL prefix
   images: {
     unoptimized: true                 // Required for static export
   }
@@ -118,7 +116,7 @@ If you need to make changes to your portfolio:
 
 ## 🎯 Quick Links
 
-- 🌐 **Live Site**: https://ishanaggarwal.github.io/ishanportfolio/
+- 🌐 **Live Site**: https://ishanaggarwal.github.io/
 - 📦 **Repository**: https://github.com/ishanaggarwal/ishanportfolio
 - ⚙️ **Actions**: https://github.com/ishanaggarwal/ishanportfolio/actions
 - 📄 **README**: [README.md](./README.md)
