@@ -68,16 +68,17 @@ The static files will be generated in the `out` directory.
 
 This project is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` branch.
 
-**Setup Steps:**
+**Quick Setup:**
 
-1. Go to your repository Settings
-2. Navigate to Pages
-3. Under "Build and deployment":
-   - Source: Select "GitHub Actions"
-4. Push your changes to the `main` branch
-5. The GitHub Actions workflow will automatically build and deploy your site
+1. Go to your repository Settings → Pages
+2. Under "Build and deployment":
+   - **Source**: Select **"GitHub Actions"** (not "Deploy from a branch")
+3. Push your changes to the `main` branch or manually trigger the workflow
+4. Monitor the deployment in the Actions tab
 
 Your site will be available at: `https://ishanaggarwal.github.io/ishanportfolio/`
+
+**📖 For detailed setup instructions and troubleshooting, see [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md)**
 
 ## 📝 Customization
 
