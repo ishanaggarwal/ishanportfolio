@@ -10,7 +10,5 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/ishanportfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ishanportfolio/' : '',
 };
 export default nextConfig;
