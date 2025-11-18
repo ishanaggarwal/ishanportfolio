@@ -673,7 +673,7 @@ Sent from your portfolio website
               Passionate about building innovative AI solutions and scalable systems that make a difference.
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span> 
-              Currently pursuing MS in Computer Science at Northeastern University.
+              Graduated Masters in Computer Science from Northeastern University.
             </motion.p>
 
             <motion.div
@@ -763,7 +763,7 @@ Sent from your portfolio website
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Boston, MA</h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Currently pursuing MS in Computer Science at Northeastern
+                      Graduated Masters in Computer Science from Northeastern University
                     </p>
                   </div>
                 </Card>
@@ -778,7 +778,7 @@ Sent from your portfolio website
                 <Card className="p-8 border-0 shadow-lg shadow-gray-200/50 dark:shadow-gray-900/50 bg-white dark:bg-gray-900 h-full transition-colors duration-500">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-black dark:bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors duration-500">
-                      <span className="text-white dark:text-black text-2xl font-bold">90%</span>
+                      <span className="text-white dark:text-black text-xl font-bold">99.99%</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Success Rate</h3>
                     <p className="text-gray-600 dark:text-gray-400">
