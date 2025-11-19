@@ -64,20 +64,11 @@ npm run build
 
 The static files will be generated in the `out` directory.
 
-### Deploy to GitHub Pages
+## 🚀 Deployed
 
-This project is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` branch.
+This site is deployed to **https://ishanaggarwal.github.io**
 
-**Setup Steps:**
-
-1. Go to your repository Settings
-2. Navigate to Pages
-3. Under "Build and deployment":
-   - Source: Select "GitHub Actions"
-4. Push your changes to the `main` branch
-5. The GitHub Actions workflow will automatically build and deploy your site
-
-Your site will be available at: `https://ishanaggarwal.github.io/ishanportfolio/`
+The CI/CD pipeline automatically deploys to the `gh-pages` branch on push to `main`. The deployment is handled by GitHub Actions workflow that builds the Next.js site as static HTML and deploys it to GitHub Pages.
 
 ## 📝 Customization
 
